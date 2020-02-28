@@ -26,4 +26,25 @@ public class MaximumProblemTest {
         Integer maximum = maximumProblem.getMaximum(10, 30, 50);
         Assert.assertEquals(Optional.of(50), Optional.of(maximum));
     }
+
+    @Test
+    public void givenMaxFloatNumberAt_1stPosition_ReturnsTheNumber() {
+        MaximumProblem maximumProblem = new MaximumProblem();
+        Float maximumFloat = maximumProblem.getMaximumFloat(0.5f, 0.2f, 0.1f);
+        Assert.assertEquals(Optional.of(0.5f), Optional.of(maximumFloat));
+    }
+
+    @Test
+    public void givenMaxFloatNumberAt_2ndPosition_ReturnsTheNumber() {
+        MaximumProblem maximumProblem = new MaximumProblem();
+        Float maximumFloat = maximumProblem.getMaximumFloat(0.5f, 1.2f, 0.1f);
+        Assert.assertEquals(Optional.of(1.2f), Optional.of(maximumFloat));
+    }
+
+    @Test
+    public void givenMaxFloatNumberAt_3rdPosition_ReturnsTheNumber() {
+        MaximumProblem maximumProblem = new MaximumProblem();
+        Float maximumFloat = maximumProblem.getMaximumFloat(0.5f, 1.2f, 2.1f);
+        Assert.assertEquals(Optional.of(2.1f), Optional.of(maximumFloat));
+    }
 }

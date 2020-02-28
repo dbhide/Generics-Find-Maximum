@@ -14,4 +14,13 @@ public class MaximumProblem {
         return num3;
     }
 
+    public Float getMaximumFloat(Float num1, Float num2, Float num3) {
+        if (num1.compareTo(num2) > 0) {
+            return num1;
+        }
+        if (num2.compareTo(num3) > 0) {
+            return num2;
+        }
+        return num3;
+    }
 }
