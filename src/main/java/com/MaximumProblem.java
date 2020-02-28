@@ -23,4 +23,14 @@ public class MaximumProblem {
         }
         return num3;
     }
+
+    public String getMaximumString(String a, String b, String c) {
+        if (a.compareTo(b) > 0) {
+            return a;
+        }
+        if (b.compareTo(c) > 0) {
+            return b;
+        }
+        return c;
+    }
 }
