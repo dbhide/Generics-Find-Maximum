@@ -1,4 +1,3 @@
-
 package com;
 
 import java.util.Arrays;
@@ -34,6 +33,13 @@ public class MaximumProblem <E extends Comparable<E>>{
                 maxValue = limit[0];
             }
         }
+        printMax(maxValue);
         return maxValue;
+
     }
+
+    private static <E extends Comparable<E>> void printMax(E maxValue) {
+        System.out.println("Maximum is : " +maxValue);
+    }
+
 }
