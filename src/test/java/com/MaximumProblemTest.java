@@ -68,4 +68,22 @@ public class MaximumProblemTest {
         String maximumString = (String) maximumProblem.getMaximum();
         Assert.assertEquals("peach", maximumString);
     }
+
+    @Test
+    public void givenIntegerArray_ShouldReturnMaximum() {
+        Comparable maximum = MaximumProblem.getMaximum(2,5,78,80,150,123);
+        Assert.assertEquals(150, maximum);
+    }
+
+    @Test
+    public void givenFloatArray_ShouldReturnMaximum() {
+        Comparable maximum = MaximumProblem.getMaximum(2.6f,5.23f,78.41f,80.7f,15.2f,123.1f);
+        Assert.assertEquals(123.1f, maximum);
+    }
+
+    @Test
+    public void givenStringArray_ShouldReturnMaximum() {
+        Comparable maximum = MaximumProblem.getMaximum("apple","banana","kiwi","cherry","plum");
+        Assert.assertEquals("plum", maximum);
+    }
 }

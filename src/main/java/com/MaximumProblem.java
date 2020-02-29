@@ -1,4 +1,8 @@
+
 package com;
+
+import java.util.Arrays;
+import java.util.Collections;
 
 public class MaximumProblem <E extends Comparable<E>>{
     E value1;
@@ -11,18 +15,25 @@ public class MaximumProblem <E extends Comparable<E>>{
         this.value3 = value3;
     }
 
-    public E getMaximum(){
+    public E getMaximum()
+    {
         return getMaximum(value1, value2, value3);
     }
 
-    public static <E extends Comparable<E>> E getMaximum(E value1, E value2, E value3) {
-
-        if (value1.compareTo(value2) > 0) {
-            return value1;
+    public static <E extends Comparable<E>> E getMaximum(E value1, E value2, E value3, E...limit) {
+        E maxValue = value1;
+        if (maxValue.compareTo(value2) < 0) {
+            maxValue = value2;
         }
-        if (value2.compareTo(value3) > 0) {
-            return value2;
+        if (maxValue.compareTo(value3) < 0) {
+            maxValue = value3;
         }
-        return value3;
+        if (limit.length != 0) {
+            Arrays.sort(limit,Collections.reverseOrder());
+            if (maxValue.compareTo(limit[0]) < 0) {
+                maxValue = limit[0];
+            }
+        }
+        return maxValue;
     }
 }
